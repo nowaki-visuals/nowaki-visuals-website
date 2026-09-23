@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nowaki Visuals — Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,380;6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF9F6;
+  --ink:#1b1a17;
+  --muted:#6b6860;
+  --line:#e6e3db;
+  --brass:#9a7b4f;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171614; --ink:#edebe6; --muted:#a6a29a; --line:#2e2c28; --brass:#c6a971;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171614; --ink:#edebe6; --muted:#a6a29a; --line:#2e2c28; --brass:#c6a971;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  display:flex; flex-direction:column; min-height:100%;
+  padding-top:env(safe-area-inset-top,0px);
+}
+.wrap{
+  flex:1; display:flex; flex-direction:column; justify-content:center;
+  max-width:640px; width:100%; margin:0 auto; padding:48px 28px;
+}
+.reveal{opacity:0; transform:translateY(10px); animation:rise .9s cubic-bezier(.2,.7,.2,1) .12s forwards}
+@keyframes rise{to{opacity:1; transform:none}}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1; transform:none; animation:none}}
+.name{
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(2.6rem,8vw,4.3rem); line-height:1.02; letter-spacing:-0.015em; margin:0;
+}
+.rule{width:44px; height:1px; background:var(--brass); border:0; margin:30px 0}
+.lede{
+  font-family:var(--serif); font-weight:380;
+  font-size:clamp(1.2rem,3.6vw,1.6rem); line-height:1.38; margin:0 0 22px; max-width:32ch;
+}
+.body{color:var(--muted); margin:0; max-width:46ch}
+footer{
+  max-width:640px; width:100%; margin:0 auto;
+  padding:22px 28px calc(22px + env(safe-area-inset-bottom,0px));
+  border-top:1px solid var(--line);
+  display:flex; flex-wrap:wrap; gap:6px 28px; justify-content:space-between;
+  font-size:.92rem; color:var(--muted);
+}
+footer a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brass); padding-bottom:1px}
+footer a:hover{color:var(--brass)}
+a:focus-visible,.name:focus-visible{outline:2px solid var(--brass); outline-offset:3px; border-radius:2px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="reveal">
+    <h1 class="name">Nowaki&nbsp;Visuals</h1>
+    <hr class="rule">
+    <p class="lede">[Wedding, portrait and event photography in Melbourne.]</p>
+    <p class="body">The full site is on its way — with client galleries to view and download your photos, and online booking for sessions. Until then, get in touch to enquire or reserve a date.</p>
+  </div>
+</main>
+<footer class="reveal">
+  <span><a href="mailto:hello@nowakivisuals.com.au">hello@nowakivisuals.com.au</a></span>
+  <span>Launching [season 2026]</span>
+</footer>
+</body>
+</html>
